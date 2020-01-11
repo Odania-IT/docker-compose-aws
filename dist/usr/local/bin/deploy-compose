@@ -5,7 +5,7 @@ echo "Previous State"
 docker-compose ps
 
 echo "Deploying docker-compose"
-docker-compose pull
+docker-compose pull -q
 docker-compose up -d --quiet-pull --remove-orphans
 
 echo "Current State"

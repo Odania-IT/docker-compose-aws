@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 ecr-login
 
+echo "Deploying ${SERVICE}"
+cd ${SERVICE}
+
 echo "Previous State"
 docker-compose ps
 

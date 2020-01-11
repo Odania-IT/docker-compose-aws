@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+ecr-login
+
+echo "Previous State"
+docker-compose ps
+
+echo "Deploying docker-compose"
+docker-compose pull
+docker-compose up -d --quiet-pull --remove-orphans
+
+echo "Current State"
+docker-compose ps
+

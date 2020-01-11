@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo "Signing in to ecr repository"
+eval $(aws ecr get-login --no-include-email)
+

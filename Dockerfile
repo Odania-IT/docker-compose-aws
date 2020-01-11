@@ -19,7 +19,8 @@ RUN add-apt-repository \
 RUN apt-get update \
 	&& apt-get install -y docker-ce-cli
 
-RUN useradd -m -r -s /bin/bash app
+RUN groupadd -g 401 app \
+	&& useradd -m -r -u 401 -g 401 -s /bin/bash app
 USER app
 WORKDIR /app
 ENV PATH /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/app/.local/bin
